@@ -33,10 +33,16 @@ jobs:
       - name: Build (static export)
         env:
           NEXT_EXPORT: "1"
-          # If you host as https://<user>.github.io/<repo>/ then base path must be "/<repo>"
-          NEXT_PUBLIC_BASE_PATH: "/${{ github.event.repository.name }}"
-          NEXT_PUBLIC_SITE_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          # Optional: set a repo variable CUSTOM_DOMAIN (e.g. bradpfeil.me).
+          # If set, we build for root-domain hosting (no basePath) and emit out/CNAME.
+          CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
+          NEXT_PUBLIC_BASE_PATH: ${{ vars.CUSTOM_DOMAIN && '' || format('/{0}', github.event.repository.name) }}
+          NEXT_PUBLIC_SITE_URL: ${{ vars.CUSTOM_DOMAIN && format('https://{0}', vars.CUSTOM_DOMAIN) || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
         run: npm run build
+
+      - name: Add CNAME (custom domain)
+        if: ${{ vars.CUSTOM_DOMAIN != '' }}
+        run: echo "${{ vars.CUSTOM_DOMAIN }}" > out/CNAME
 
       - name: Disable Jekyll
         run: touch out/.nojekyll
