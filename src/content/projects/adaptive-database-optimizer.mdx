@@ -1,0 +1,26 @@
+---
+title: "Adaptive Database Optimizer"
+year: "2025"
+summary: "A closed-loop system that observes SQL workloads and incrementally optimises Parquet physical layouts (partitioning + sorting), validating improvements with automated DuckDB benchmarks."
+tags: ["Reinforcement Learning", "Adaptive", "Routing", "Automation", "Partitioning"]
+---
+
+## The problem
+
+Analytics teams often store data in Parquet and query it with engines like DuckDB. The same dataset can perform **very differently** depending on how it’s physically laid out (partitioning, sorting, row groups). But workloads change over time, and hand-tuning layouts doesn’t scale.
+
+## What I built
+
+An **adaptive feedback loop** that:
+
+1. Logs query workload features (tables, predicates, group-bys, joins, projections).
+2. Proposes candidate layouts (e.g., *partition by X*, *sort by Y*).
+3. Rewrites datasets into those layouts.
+4. Benchmarks performance on a representative workload and keeps winners.
+
+## Why it’s interesting
+
+- Layout optimization is a classic “**systems meets data**” problem: you need practical heuristics, measurable improvements, and careful evaluation.
+- The system is designed to be **dataset-agnostic** (works beyond one specific dataset).
+
+

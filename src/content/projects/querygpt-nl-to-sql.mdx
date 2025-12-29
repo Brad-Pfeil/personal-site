@@ -1,0 +1,34 @@
+---
+title: "QueryGPT: NL-to-SQL Pipeline"
+year: "2025"
+summary: "A modular, multi-agent NL-to-SQL pipeline with structured intermediate outputs to reduce token usage and failure modes as schemas evolve."
+tags: ["LLMs", "Structured outputs", "RAG", "Pydantic", "Data products"]
+---
+
+## The problem
+
+NL-to-SQL systems often fail in predictable ways:
+
+- Selecting the wrong tables
+- Over-selecting columns (token bloat)
+- Generating syntactically valid SQL that’s semantically wrong
+- Breaking as schemas change
+
+## What I built
+
+A **pipeline architecture** that decomposes the task into smaller, testable steps:
+
+- Intent detection
+- Table selection
+- Column pruning
+- SQL generation
+- (Optional) retrieval-augmented hints via a vector store
+
+Each step emits **structured outputs** rather than free-form text. This makes the whole pipeline easier to debug, cheaper to run, and more resilient.
+
+## Why it’s interesting
+
+- It demonstrates “**LLM engineering as software engineering**”: interfaces, validation, and failure containment.
+- It’s a realistic data product: schema-aware, maintainable, and designed for iteration.
+
+
