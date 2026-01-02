@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const isExport = process.env.NEXT_EXPORT === "1";
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const basePathRaw = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const basePath = basePathRaw === "__ROOT__" ? "" : basePathRaw;
 
 const nextConfig = {
   reactStrictMode: true,

@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --bg: 222 47% 6%;
-  --fg: 210 40% 96%;
-  --card: 222 47% 9%;
-  --border: 220 22% 22%;
-  --muted: 217 18% 20%;
-  --accent: 188 86% 52%;
+  /* No gradient theme: clean, high-contrast, neutral. */
+  --bg: 225 10% 6%;
+  --fg: 210 25% 96%;
+  --card: 225 10% 8%;
+  --border: 215 14% 18%;
+  --muted: 215 12% 18%;
+  --accent: 210 25% 96%;
 }
 
 html,
@@ -21,22 +22,8 @@ body {
   background: hsl(var(--bg));
 }
 
-/* Fixed backdrop layer so gradients don't "shift" with scroll/document height */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(1200px 600px at 20% 10%, hsl(var(--accent) / 0.16), transparent 60%),
-    radial-gradient(900px 500px at 80% 0%, hsl(270 86% 60% / 0.12), transparent 55%),
-    radial-gradient(800px 500px at 80% 90%, hsl(35 92% 60% / 0.08), transparent 55%),
-    hsl(var(--bg));
-}
-
 ::selection {
-  background: hsl(var(--accent) / 0.25);
+  background: rgba(255, 255, 255, 0.14);
 }
 
 @layer components {
@@ -44,16 +31,16 @@ body::before {
     @apply mx-auto w-full max-w-6xl px-5 md:px-8;
   }
   .card {
-    @apply rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-[0_0_0_1px_hsl(var(--border)),_0_10px_40px_-20px_hsl(var(--accent)/0.35)];
+    @apply rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))];
   }
   .chip {
-    @apply inline-flex items-center rounded-full border border-[hsl(var(--border))] bg-white/5 px-2.5 py-1 text-xs text-white/80;
+    @apply inline-flex items-center rounded-full border border-[hsl(var(--border))] bg-transparent px-2.5 py-1 text-xs text-white/80;
   }
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-[hsl(var(--border))] bg-white/5 px-4 py-2 text-sm font-medium text-white/90 transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent)/0.5)];
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-[hsl(var(--border))] bg-transparent px-4 py-2 text-sm font-medium text-white/90 transition hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/20;
   }
   .btnPrimary {
-    @apply border-transparent bg-[hsl(var(--accent)/0.15)] hover:bg-[hsl(var(--accent)/0.22)];
+    @apply border-white/10 bg-white/5 hover:bg-white/10;
   }
   .link {
     @apply text-white/85 underline decoration-white/25 underline-offset-4 transition hover:text-white hover:decoration-white/60;
