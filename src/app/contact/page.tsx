@@ -15,9 +15,6 @@ export default function ContactPage() {
           <p className="mt-2 text-sm text-white/70">
             <EmailLink email="Brad180795@gmail.com" />
           </p>
-          <p className="mt-4 text-sm text-white/65">
-            Tip: include the job title + location + a link to the listing so I can respond quickly.
-          </p>
         </div>
 
         <div className="card p-6">

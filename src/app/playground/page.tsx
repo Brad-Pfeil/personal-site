@@ -14,14 +14,14 @@ const demos = [
     blurb: "Tune learning rate and see convergence (or divergence) in real time.",
   },
   {
-    href: "/playground/ab-test",
-    title: "A/B inference simulator",
-    blurb: "Traffic, effect size, and Bayesian posterior.",
-  },
-  {
     href: "/playground/mdp-gridworld",
     title: "Gridworld MDP",
     blurb: "Draw walls, add transition noise, and compute the optimal policy via value iteration.",
+  },
+  {
+    href: "/playground/ab-test",
+    title: "A/B inference simulator",
+    blurb: "Traffic, effect size, and Bayesian posterior.",
   }
 ] as const;
 
@@ -30,7 +30,7 @@ export default function PlaygroundPage() {
     <div className="space-y-8">
       <PageHeader
         title="Playground"
-        subtitle="Small interactive labs: iterate, measure, and make decisions under uncertainty."
+        subtitle="Small interactive labs: iterate, measure, and see how the simulation changes."
       />
 
       <div className="grid gap-4 md:grid-cols-3">

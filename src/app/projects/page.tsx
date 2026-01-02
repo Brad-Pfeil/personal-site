@@ -9,7 +9,7 @@ export default async function ProjectsPage() {
     <div className="space-y-8">
       <PageHeader
         title="Projects"
-        subtitle="High-signal deep dives. Each page focuses on decisions, tradeoffs, and measurable outcomes—not fluff."
+        subtitle="Have a look at some of my personal projects. Checkout my GitHub for more."
         right={
           <a className="btn" href="https://github.com/Brad-Pfeil" target="_blank" rel="noreferrer">
             View GitHub

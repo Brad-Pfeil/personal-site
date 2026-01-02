@@ -32,10 +32,7 @@ export default function HomePage() {
             Bradley Pfeil
           </h1>
           <p className="mt-3 max-w-2xl text-white/75 md:text-lg">
-            Heyo.
-            <br />
-            <br />
-            I’m a data scientist who likes decision-making under uncertainty—and then building the systems that make those decisions. Most of my work sits at the intersection of dynamic pricing, optimisation, and cloud infrastructure.
+            I’m a data scientist who likes decision-making under uncertainty, and then building systems to make those decisions. Most of my work sits at the intersection of dynamic pricing, optimisation, and cloud infrastructure.
             <br />
             <br />
             I enjoy problems where the model is only half the battle; the rest is understanding how it behaves in the real world. I care a lot about clean abstractions, reproducibility, and knowing why something works.
