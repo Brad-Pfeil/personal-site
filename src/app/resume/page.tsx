@@ -33,23 +33,46 @@ export default function ResumePage() {
           <div className="mt-4 space-y-4 text-sm text-white/75">
             <div>
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <div className="font-semibold text-white/90">Streamline (Aurizn / Lunio) — Data Scientist</div>
+                <div className="font-semibold text-white/90">
+                  Streamline (Aurizn / Lunio) — Data Scientist
+                </div>
                 <div className="text-white/55">2024 – Current</div>
               </div>
               <ul className="mt-2 list-disc space-y-1 pl-5">
-                <li>Optimised a dynamic pricing model; improved inference time by ~80% and enhanced revenue forecast accuracy.</li>
-                <li>Owned AWS MLOps + support; implemented cost monitoring/reporting reducing monthly AWS spend by ~$2,000+.</li>
-                <li>Founded and led a journal review club to grow team research literacy.</li>
+                <li>
+                  Lead Data Scientist for Streamline, owning end-to-end pricing model design and evolution:
+                  pricing logic, optimisation strategies, production validation, monitoring, and explainability
+                  standards.
+                </li>
+                <li>
+                  Developed and optimised a dynamic pricing model across multiple companies; identified and
+                  resolved scaling bottlenecks, halving inference time and improving revenue forecast accuracy.
+                </li>
+                <li>
+                  Owned AWS MLOps and support; reviewed infrastructure inefficiencies and built cost
+                  monitoring/reporting that reduced monthly AWS spend by 20%+.
+                </li>
+                <li>
+                  Founded and led a journal review club, fostering team growth through discussion of AI/ML
+                  research.
+                </li>
               </ul>
             </div>
             <div>
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <div className="font-semibold text-white/90">Aurizn — Intern Data Scientist</div>
-                <div className="text-white/55">2022 – 2024</div>
+                <div className="font-semibold text-white/90">Aurizn — Intern / Graduate Data Scientist</div>
+                <div className="text-white/55">2023 – 2024</div>
               </div>
               <ul className="mt-2 list-disc space-y-1 pl-5">
-                <li>Built LLM-based recommender systems with SHAP-driven explainability for stakeholders.</li>
-                <li>Automated retraining workflows to maintain consistent model accuracy and reduce manual ops.</li>
+                <li>
+                  Developed LLM-based recommender systems with SHAP-driven explainability to surface model
+                  decision logic for non-technical stakeholders.
+                </li>
+                <li>
+                  Analysed data ingestion and retraining pipelines for a dynamic pricing project; implemented an
+                  automated retraining workflow that maintained model accuracy and reduced manual
+                  maintenance.
+                </li>
               </ul>
             </div>
           </div>
