@@ -6,7 +6,7 @@ const chips = [
   "Python",
   "SQL",
   "PyTorch",
-  "Spark",
+  "Polars",
   "AWS",
   "MLOps",
   "Optimization",

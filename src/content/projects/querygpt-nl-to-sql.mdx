@@ -2,7 +2,7 @@
 title: "QueryGPT: NL-to-SQL Pipeline"
 year: "2025"
 summary: "A modular, multi-agent NL-to-SQL pipeline with structured intermediate outputs to reduce token usage and failure modes as schemas evolve."
-tags: ["LLMs", "Structured outputs", "RAG", "Pydantic", "Data products"]
+tags: ["LLMs", "Structured outputs", "RAG", "llama-index", "pydantic-ai", "Neo4j"]
 ---
 
 ## The problem
@@ -25,6 +25,8 @@ A **pipeline architecture** that decomposes the task into smaller, testable step
 - (Optional) retrieval-augmented hints via a vector store
 
 Each step emits **structured outputs** rather than free-form text. This makes the whole pipeline easier to debug, cheaper to run, and more resilient.
+
+The stack uses `llama-index` and `pydantic-ai` for structured agent orchestration, with a **Neo4j vector store** powering retrieval-augmented generation so the system stays maintainable as schemas evolve.
 
 ## Why it’s interesting
 

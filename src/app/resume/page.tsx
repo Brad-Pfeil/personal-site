@@ -36,24 +36,38 @@ export default function ResumePage() {
                 <div className="font-semibold text-white/90">
                   Streamline (Aurizn / Lunio) — Data Scientist
                 </div>
-                <div className="text-white/55">2024 – Current</div>
+                <div className="text-white/55">2025 – Current</div>
               </div>
               <ul className="mt-2 list-disc space-y-1 pl-5">
                 <li>
-                  Lead Data Scientist for Streamline, owning end-to-end pricing model design and evolution:
-                  pricing logic, optimisation strategies, production validation, monitoring, and explainability
-                  standards.
+                  Lead Data Scientist owning end-to-end design of a revenue management platform that surfaces
+                  pricing improvement opportunities through mathematical modelling and optimisation.
                 </li>
                 <li>
-                  Developed and optimised a dynamic pricing model across multiple companies; identified and
-                  resolved scaling bottlenecks, halving inference time and improving revenue forecast accuracy.
+                  Built a two-stage statistical model (hurdle classifier + gradient-boosted regressor with
+                  uncertainty quantification) to estimate demand transitions, and a Markov Decision Process solver
+                  that computes optimal pricing policies, revenue forecasts, and scenario analysis via forward
+                  simulation.
                 </li>
                 <li>
-                  Owned AWS MLOps and support; reviewed infrastructure inefficiencies and built cost
-                  monitoring/reporting that reduced monthly AWS spend by 20%+.
+                  Applied econometric and causal inference techniques to estimate heterogeneous price
+                  elasticities, and designed a counterfactual data augmentation pipeline to improve generalisation
+                  beyond observed price variation.
                 </li>
                 <li>
-                  Founded and led a journal review club, fostering team growth through discussion of AI/ML
+                  Translated these capabilities into production software on AWS (Docker, ECS, SQS, Lambda), with
+                  CI/CD, automated testing, model validation, and code quality governance.
+                </li>
+                <li>
+                  Engaged directly with clients and stakeholders to explain model outputs, define domain-specific
+                  reward functions, and align pricing recommendations with business objectives.
+                </li>
+                <li>
+                  Identified and resolved scaling bottlenecks, halving inference time, and implemented a cost
+                  monitoring framework that reduced monthly AWS spend by 20%+.
+                </li>
+                <li>
+                  Founded and lead a journal review club, fostering team growth through discussion of AI/ML
                   research.
                 </li>
               </ul>
@@ -61,7 +75,7 @@ export default function ResumePage() {
             <div>
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <div className="font-semibold text-white/90">Aurizn — Intern / Graduate Data Scientist</div>
-                <div className="text-white/55">2023 – 2024</div>
+                <div className="text-white/55">2023 – 2025</div>
               </div>
               <ul className="mt-2 list-disc space-y-1 pl-5">
                 <li>
@@ -69,9 +83,9 @@ export default function ResumePage() {
                   decision logic for non-technical stakeholders.
                 </li>
                 <li>
-                  Analysed data ingestion and retraining pipelines for a dynamic pricing project; implemented an
-                  automated retraining workflow that maintained model accuracy and reduced manual
-                  maintenance.
+                  Engineered data ingestion and automated retraining pipelines for a dynamic pricing system,
+                  ensuring consistent model accuracy across changing data distributions while reducing manual
+                  maintenance overhead.
                 </li>
               </ul>
             </div>
@@ -89,29 +103,40 @@ export default function ResumePage() {
           </div>
 
           <h3 className="mt-8 text-sm font-semibold uppercase tracking-wider text-white/70">Languages & tools</h3>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {[
-              "Python",
-              "SQL",
-              "PySpark",
-              "PyTorch",
-              "AWS",
-              "IaC",
-              "Git",
-              "R",
-              "Java",
-              "C++"
-            ].map((t) => (
-              <span key={t} className="chip">
-                {t}
-              </span>
-            ))}
+          <div className="mt-4">
+            <div className="text-xs uppercase tracking-wider text-white/45">Proficient</div>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {[
+                "Python",
+                "SQL",
+                "GBT",
+                "Polars",
+                "PyTorch",
+                "EconML",
+                "statsmodels",
+                "AWS",
+                "Docker",
+                "Git",
+                "Linux"
+              ].map((t) => (
+                <span key={t} className="chip">
+                  {t}
+                </span>
+              ))}
+            </div>
+            <div className="mt-4 text-xs uppercase tracking-wider text-white/45">Experienced</div>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {["PySpark", "Rust", "C++"].map((t) => (
+                <span key={t} className="chip">
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
 
           <h3 className="mt-8 text-sm font-semibold uppercase tracking-wider text-white/70">Additional</h3>
           <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-white/75">
             <li>Scrum Master Certificate (2025)</li>
-            <li>Industry liaison — University of Adelaide Competitive Programming Club (2024)</li>
           </ul>
         </div>
       </div>
