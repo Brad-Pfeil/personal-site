@@ -34,41 +34,36 @@ export default function ResumePage() {
             <div>
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <div className="font-semibold text-white/90">
-                  Streamline (Aurizn / Lunio) — Data Scientist
+                  Streamline (Lunio) — Data Scientist
                 </div>
                 <div className="text-white/55">2025 – Current</div>
               </div>
               <ul className="mt-2 list-disc space-y-1 pl-5">
                 <li>
-                  Lead Data Scientist owning end-to-end design of a revenue management platform that surfaces
-                  pricing improvement opportunities through mathematical modelling and optimisation.
+                  Worked with a team to build a dynamic pricing platform for enterprise clients that surfaces
+                  revenue opportunities through demand modelling and optimisation.
                 </li>
                 <li>
-                  Built a two-stage statistical model (hurdle classifier + gradient-boosted regressor with
-                  uncertainty quantification) to estimate demand transitions, and a Markov Decision Process solver
-                  that computes optimal pricing policies, revenue forecasts, and scenario analysis via forward
-                  simulation.
+                  Modelled transition probabilities with a two-stage approach (hurdle classifier + gradient-boosted
+                  regressor with uncertainty estimates) and jointly developed a Markov Decision Process solver that
+                  recommends optimal prices and forecasts revenue.
                 </li>
                 <li>
-                  Applied econometric and causal inference techniques to estimate heterogeneous price
-                  elasticities, and designed a counterfactual data augmentation pipeline to improve generalisation
-                  beyond observed price variation.
+                  Estimated price response with causal inference and added a counterfactual data pipeline so models
+                  generalise beyond observed price points.
                 </li>
                 <li>
-                  Translated these capabilities into production software on AWS (Docker, ECS, SQS, Lambda), with
-                  CI/CD, automated testing, model validation, and code quality governance.
+                  Currently developing a deep Q-learning agent (PyTorch) that treats commodity-storage pricing as a
+                  sequential control problem.
                 </li>
                 <li>
-                  Engaged directly with clients and stakeholders to explain model outputs, define domain-specific
-                  reward functions, and align pricing recommendations with business objectives.
+                  Shipped models to production on AWS with CI/CD pipelines; refactored bottlenecks to halve
+                  inference time.
                 </li>
+                <li>Cut monthly AWS spend by 20%+ via a dedicated cost-monitoring framework.</li>
                 <li>
-                  Identified and resolved scaling bottlenecks, halving inference time, and implemented a cost
-                  monitoring framework that reduced monthly AWS spend by 20%+.
-                </li>
-                <li>
-                  Founded and lead a journal review club, fostering team growth through discussion of AI/ML
-                  research.
+                  Worked closely with clients to explain results, shape reward functions, and keep recommendations
+                  grounded in the business; started a paper-reading group.
                 </li>
               </ul>
             </div>
@@ -79,13 +74,13 @@ export default function ResumePage() {
               </div>
               <ul className="mt-2 list-disc space-y-1 pl-5">
                 <li>
-                  Developed LLM-based recommender systems with SHAP-driven explainability to surface model
-                  decision logic for non-technical stakeholders.
+                  Built LLM-based recommender systems consuming Shapley values to explain their decisions in terms
+                  non-technical stakeholders could act on.
                 </li>
                 <li>
-                  Engineered data ingestion and automated retraining pipelines for a dynamic pricing system,
-                  ensuring consistent model accuracy across changing data distributions while reducing manual
-                  maintenance overhead.
+                  Worked with the team to build client-requested features and model improvements for a dynamic
+                  pricing system, including data ingestion and automated retraining that kept accuracy steady as the
+                  data shifted and cut manual upkeep.
                 </li>
               </ul>
             </div>
@@ -112,8 +107,6 @@ export default function ResumePage() {
                 "GBT",
                 "Polars",
                 "PyTorch",
-                "EconML",
-                "statsmodels",
                 "AWS",
                 "Docker",
                 "Git",
@@ -126,7 +119,7 @@ export default function ResumePage() {
             </div>
             <div className="mt-4 text-xs uppercase tracking-wider text-white/45">Experienced</div>
             <div className="mt-2 flex flex-wrap gap-2">
-              {["PySpark", "Rust", "C++"].map((t) => (
+              {["PySpark", "Rust"].map((t) => (
                 <span key={t} className="chip">
                   {t}
                 </span>

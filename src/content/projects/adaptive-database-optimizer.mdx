@@ -1,8 +1,8 @@
 ---
 title: "Adaptive Database Optimizer"
 year: "2025"
-summary: "A closed-loop system that observes SQL workloads and incrementally optimises Parquet physical layouts (partitioning + sorting), validating improvements with automated DuckDB benchmarks."
-tags: ["Reinforcement Learning", "Adaptive", "Routing", "Automation", "Partitioning"]
+summary: "A self-tuning system that watches SQL workloads and automatically retunes how Parquet data is partitioned and sorted, routing traffic across layout versions with multi-armed and contextual bandits (UCB1, Thompson sampling) and keeping only statistically confident improvements."
+tags: ["Bandits", "Adaptive", "Routing", "Automation", "Partitioning", "DuckDB"]
 ---
 
 ## The problem
@@ -11,16 +11,19 @@ Teams often store data in Parquet and query it with engines like DuckDB. The sam
 
 ## What I built
 
-An **adaptive feedback loop** that:
+A **self-tuning feedback loop** that:
 
-1. Logs query workload features (tables, predicates, group-bys, joins, projections).
-2. Proposes candidate layouts (e.g., *partition by X*, *sort by Y*).
+1. Logs each query’s access patterns (tables, predicates, group-bys, joins, projections).
+2. Proposes candidate layouts from workload analysis (e.g., *partition by X*, *sort by Y*).
 3. Rewrites datasets into those layouts.
-4. Benchmarks performance on a representative workload and keeps winners.
+4. Routes traffic across layout versions with **multi-armed and contextual bandits** (UCB1, Thompson sampling), learning which layouts win as access patterns shift.
+
+Built in Python with **DuckDB** and **PyArrow**, with statistically gated rewards so only confident improvements are kept.
 
 ## Why it’s interesting
 
 - Layout optimization is a classic “**systems meets data**” problem: you need practical heuristics, measurable improvements, and careful evaluation.
+- The bandit-based routing turns layout selection into an **online learning** problem that adapts to changing workloads.
 - The system is designed to be **dataset-agnostic** (works beyond one specific dataset).
 
 

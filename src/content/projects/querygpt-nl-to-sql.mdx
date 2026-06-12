@@ -1,7 +1,7 @@
 ---
 title: "QueryGPT: NL-to-SQL Pipeline"
 year: "2025"
-summary: "A modular, multi-agent NL-to-SQL pipeline with structured intermediate outputs to reduce token usage and failure modes as schemas evolve."
+summary: "A multi-agent NL-to-SQL pipeline of four staged agents (intent, table selection, column pruning, SQL generation) that progressively narrows schema context to cut token usage, with pydantic-ai structured outputs and automatic retries, llama-index + Neo4j hybrid vector store RAG, and end-to-end SQL validation."
 tags: ["LLMs", "Structured outputs", "RAG", "llama-index", "pydantic-ai", "Neo4j"]
 ---
 
@@ -16,17 +16,16 @@ NL-to-SQL systems often fail in predictable ways:
 
 ## What I built
 
-A **pipeline architecture** that decomposes the task into smaller, testable steps:
+A **pipeline of four staged agents** that decomposes the task into smaller, testable steps:
 
-- Intent detection
+- Intent classification
 - Table selection
 - Column pruning
 - SQL generation
-- (Optional) retrieval-augmented hints via a vector store
 
-Each step emits **structured outputs** rather than free-form text. This makes the whole pipeline easier to debug, cheaper to run, and more resilient.
+Progressively narrowing the schema context at each stage cuts token usage and reduces failure cases. Each step emits **structured outputs** via `pydantic-ai` with **automatic retries** rather than free-form text, making the whole pipeline easier to debug, cheaper to run, and more reliable.
 
-The stack uses `llama-index` and `pydantic-ai` for structured agent orchestration, with a **Neo4j vector store** powering retrieval-augmented generation so the system stays maintainable as schemas evolve.
+The stack uses `llama-index` and a **Neo4j hybrid vector store** to retrieve similar query examples (RAG), and validates generated SQL end-to-end so errors surface immediately.
 
 ## Why it’s interesting
 
